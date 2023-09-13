@@ -31,19 +31,47 @@ input, textarea {
   outline: none;
 }
 
+.main .btn-secondary, .main .btn-primary {
+  display: inline-block;
+  text-align: center;
+  border-radius: 75px;
+  padding: 8px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+}
+
 body {
   font-family: "Barlow", sans-serif;
-  background: linear-gradient(to right, #201F22, #2C2D65);
+  background-image: url("../img/deco1.png"), linear-gradient(to right, #201F22, #2C2D65);
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: top -90px right -125px, center;
 }
 
 .container {
   max-width: 1110px;
   margin: 0 auto;
-  padding: 0;
+  padding: 16px;
 }
 
 .info {
   border: 2px solid red;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-20 {
+  margin-right: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-20 {
+  margin-left: 20px;
 }
 
 .header {
@@ -88,4 +116,86 @@ body {
   .header .burger-menu {
     display: none;
   }
+}
+
+.main {
+  margin-bottom: 100px;
+}
+.main .container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+.main .hero-title {
+  position: relative;
+  font-family: "Barlow", sans-serif;
+  color: #FFFFFF;
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 77px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.main .hero-title::before {
+  content: url(../img/deco3\ 1.png);
+  position: absolute;
+  top: -45px;
+  left: -45px;
+}
+.main .hero-subtitle {
+  font-family: "Barlow", sans-serif;
+  color: #E8AB36;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.main .hero-description {
+  position: relative;
+  color: #FFFFFF;
+  font-family: "Barlow", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0.45px;
+  width: 80%;
+}
+.main .hero-description::after {
+  content: url(../img/deco2.png);
+  position: absolute;
+  bottom: -50px;
+  right: -30px;
+}
+@media screen and (min-width: 768px) {
+  .main .container {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 175px;
+  }
+  .main .hero-title {
+    font-size: 64px;
+    white-space: nowrap;
+  }
+  .main .hero-subtitle {
+    font-size: 32px;
+  }
+}
+.main .btn-primary {
+  background-color: #E6606C;
+  color: #FFFFFF;
+}
+.main .btn-primary:hover {
+  background-color: #df3443;
+  transform: scale 1.1;
+}
+.main .btn-secondary {
+  background-color: #FFFFFF;
+  color: #000;
+}
+.main .btn-secondary:hover {
+  background-color: #e6e6e6;
+  transform: scale 1.1;
 }

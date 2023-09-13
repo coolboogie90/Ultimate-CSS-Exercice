@@ -4,11 +4,14 @@
 @import '02-Reset';
 @import '03-Mixins';
 @import '04-Breakpoints';
+@import '05-Buttons';
 
 body {
     font-family: $primary-font;
-    background: $background--gradient;
-    //background-image: url('../img/deco1.png');
+    background-image: url('../img/deco1.png'), $background--gradient;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    background-position: top -90px right -125px, center;
 }
 
 .container {
@@ -18,6 +21,23 @@ body {
 //----Debug Class 
 .info {
     @include debugmode();
+}
+
+//===Margin 20px
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-20 {
+    margin-right: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-20 {
+    margin-left: 20px;
 }
 
 //=====HEADER=====
@@ -40,6 +60,8 @@ body {
             color: $light-carmine-pink;
         }
     }
+
+    
 
     .nav {
         @include set-display-flex;
@@ -70,3 +92,98 @@ body {
     }
 }
 
+//MAIN
+.main {
+    margin-bottom: 100px;
+
+    .container {
+        @include set-display-grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        position: relative;
+        font-family: $primary-font;
+        color: $primary--pure-white;
+        font-size: 54px;
+        font-weight: 300;
+        line-height: 77px;
+        letter-spacing: 0.045em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .hero-title::before{
+        content: url(../img/deco3\ 1.png);
+        position: absolute;
+        top: -45px;
+        left: -45px;
+    }
+
+    .hero-subtitle {
+        font-family: $primary-font;
+        color: $subtitle--tulip-tree;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 38px;
+        letter-spacing: 0.045em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .hero-description {
+        position: relative;
+        color: $primary--pure-white;
+        font-family: $primary-font;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 32px;
+        letter-spacing: 0.45px;
+        width: 80%;
+    }
+
+    .hero-description::after {
+        content: url(../img/deco2.png);
+        position: absolute;
+        bottom: -50px;
+        right: -30px;
+    }
+
+    @include resolution($ipad) {
+        .container {
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 175px;;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            white-space: nowrap;
+        }
+
+        .hero-subtitle {
+            font-size: 32px;
+        }
+    }
+
+    .btn-primary {
+        @extend %btn;
+        background-color: $light-carmine-pink;
+        color: $primary--pure-white;
+
+        &:hover {
+            background-color: darken($light-carmine-pink, 10%);
+            transform: scale (1.1);
+        }
+    }
+
+    .btn-secondary {
+        @extend %btn;
+        background-color: $primary--pure-white;
+        color: $pure-black;
+
+        &:hover {
+            background-color: darken($primary--pure-white, 10%);
+            transform: scale (1.1);
+        }
+    }
+}
