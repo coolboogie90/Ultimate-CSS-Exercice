@@ -31,126 +31,61 @@ input, textarea {
   outline: none;
 }
 
+body {
+  font-family: "Barlow", sans-serif;
+  background: linear-gradient(to right, #201F22, #2C2D65);
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0;
+}
+
 .info {
   border: 2px solid red;
 }
 
-.logo {
+.header {
+  padding-top: 31px;
+  padding-bottom: 31px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
   font-family: "Barlow", sans-serif;
   color: #FFFFFF;
   font-size: 32px;
   font-weight: 800;
   text-transform: uppercase;
 }
-.logo span {
+.header .logo span {
   color: #E6606C;
 }
-
-.header--nav-a {
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  display: none;
+}
+.header .nav a {
   font-family: "Barlow", sans-serif;
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 400;
 }
-
-.primary-title {
-  font-family: "Barlow", sans-serif;
-  color: #FFFFFF;
-  font-size: 64px;
-  font-weight: 300;
-  line-height: 77px;
-  letter-spacing: 0.045em;
-  text-align: left;
-  text-transform: uppercase;
+.header .burger-menu {
+  display: block;
 }
-
-.secondary-title {
-  font-family: "Barlow Condensed", sans-serif;
-  color: #FFFFFF;
-  font-size: 56px;
-  font-weight: 300;
-  line-height: 64px;
-  letter-spacing: 0px;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.subtitle {
-  font-family: "Barlow", sans-serif;
-  color: #E8AB36;
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 38px;
-  letter-spacing: 0.045em;
-  text-align: left;
-}
-
-.kicker {
-  font-family: "Barlow", sans-serif;
-  color: hsla(0, 0%, 100%, 0.5);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-  letter-spacing: 3px;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-.excerpt {
-  font-family: "Barlow", sans-serif;
-  color: hsla(0, 0%, 100%, 0.5);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 32px;
-}
-
-.paragraph {
-  font-family: "Barlow", sans-serif;
-  color: hsla(0, 0%, 100%, 0.5);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-}
-
-.card-text {
-  font-family: "Barlow Condensed", sans-serif;
-  color: #FFFFFF;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 32px;
-}
-
-.footer--nav-a {
-  font-family: "Barlow", sans-serif;
-  color: hsla(0, 0%, 100%, 0.5);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 32px;
-}
-
-.btn-secondary, .btn-primary {
-  display: inline-block;
-  text-align: center;
-  border-radius: 75px;
-  padding: 8px 20px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.btn-secondary:hover, .btn-primary:hover {
-  transform: scale 0.98;
-}
-
-.btn-primary {
-  background-color: #E6606C;
-  color: #FFFFFF;
-}
-.btn-primary:hover {
-  background-color: #df3443;
-}
-
-.btn-secondary {
-  background-color: #FFFFFF;
-  color: #000;
-}
-.btn-secondary:hover {
-  background-color: #e6e6e6;
+@media screen and (min-width: 768px) {
+  .header .nav {
+    display: flex;
+  }
+  .header .burger-menu {
+    display: none;
+  }
 }

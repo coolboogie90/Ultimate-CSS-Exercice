@@ -6,31 +6,31 @@ $desktop: 1920px;
 $desktop4K: 3440px;
 
 //MEDIA QUERIES MIXINS
-@mixin media-query($ipad) {
+@mixin resolution($ipad) {
     @media screen and (min-width: $ipad) {
         @content;
     }
 }
 
-@mixin media-query($laptop13) {
+@mixin resolution($laptop13) {
     @media screen and (min-width: $laptop13) {
         @content;
     }
 }
 
-@mixin media-query($laptop) {
+@mixin resolution($laptop) {
     @media screen and (min-width: $laptop) {
         @content;
     }
 }
 
-@mixin media-query($desktop) {
+@mixin resolution($desktop) {
     @media screen and (min-width: $desktop) {
         @content;
     }
 }
 
-@mixin media-query($desktop4K) {
+@mixin resolution($desktop4K) {
     @media screen and (min-width: $desktop4K) {
         @content;
     }

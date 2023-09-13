@@ -1,9 +1,72 @@
-//---imports
-@import 'reset';
-@import 'breakpoints';
-@import 'utilities';
-@import 'colors';
-@import 'typography';
-@import 'buttons';
+//=====RESET=====
 
+@import '01-Variables';
+@import '02-Reset';
+@import '03-Mixins';
+@import '04-Breakpoints';
+
+body {
+    font-family: $primary-font;
+    background: $background--gradient;
+    //background-image: url('../img/deco1.png');
+}
+
+.container {
+    @include set-container;
+}
+
+//----Debug Class 
+.info {
+    @include debugmode();
+}
+
+//=====HEADER=====
+.header {
+    padding-top: 31px;
+    padding-bottom: 31px;
+
+    .container {
+        @include set-display-flex;
+    }
+
+    .logo {
+        font-family: $primary-font;
+        color: $primary--pure-white;
+        font-size: 32px;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        span {
+            color: $light-carmine-pink;
+        }
+    }
+
+    .nav {
+        @include set-display-flex;
+        gap: 40px;
+
+        display: none;
+
+        a {
+            font-family: $primary-font;
+            color: $primary--pure-white;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    @include resolution($ipad) {
+        .nav {
+            display: flex;
+        }
+
+        .burger-menu {
+            display: none;
+        }
+    }
+}
 

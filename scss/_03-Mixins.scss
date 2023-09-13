@@ -1,7 +1,7 @@
 //===Set container===
 @mixin set-container {
     max-width: 1110px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -18,15 +18,10 @@ $debug: true !default;
     }
 }
 
-//Debug Class 
-.info {
-    @include debugmode();
-}
-
 //===Set display: flex===
 @mixin set-display-flex() {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
