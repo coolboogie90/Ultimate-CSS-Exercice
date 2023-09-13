@@ -5,7 +5,26 @@ $primary-font: 'Barlow', sans-serif;
 $secondary-font: 'Barlow Condensed', sans-serif;
 
 //===TEXT STYLES===
-h1 {
+.logo{
+    font-family: $primary-font;
+    color: $primary--pure-white;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+        color: $light-carmine-pink;
+    }
+}
+
+.header--nav-a{
+    font-family: $primary-font;
+    color: $primary--pure-white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.primary-title {
     font-family: $primary-font;
     color: $primary--pure-white;
     font-size: 64px;
@@ -16,7 +35,7 @@ h1 {
     text-transform: uppercase;
 }
 
-h2 {
+.secondary-title {
     font-family: $secondary-font;
     color: $primary--pure-white;
     font-size: 56px;
@@ -27,7 +46,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+.subtitle {
     font-family: $primary-font;
     color: $subtitle--tulip-tree;
     font-size: 32px;
@@ -37,7 +56,7 @@ h3 {
     text-align: left;
 }
 
-h4 {
+.kicker {
     font-family: $primary-font;
     color: $secondary--white-alpha;
     font-size: 16px;
@@ -47,7 +66,34 @@ h4 {
     text-align: left;
     text-transform: uppercase;
 }
+.excerpt{
+    font-family: $primary-font;
+    color: $secondary--white-alpha;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+}
 
-p.excerpt{
-    
+.paragraph {
+    font-family: $primary-font;
+    color: $secondary--white-alpha;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.card-text{
+    font-family: $secondary-font;
+    color: $primary--pure-white;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 32px;
+}
+
+.footer--nav-a{
+    font-family: $primary-font;
+    color: $secondary--white-alpha;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
 }

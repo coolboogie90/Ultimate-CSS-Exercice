@@ -1,18 +1,36 @@
-.container {
+//===Set container===
+@mixin set-container {
     max-width: 1110px;
     margin: 0;
     padding: 0;
 }
 
-//use @include to call the mixin
-//Set display: flex
+//===Debug Mode===
+$debug: true !default;
+
+@mixin debugmode{
+    @if ($debug) {
+        @debug "Debug mode enabled";
+        border: 2px solid red;
+    }
+    @else {
+        border: none;
+    }
+}
+
+//Debug Class 
+.info {
+    @include debugmode();
+}
+
+//===Set display: flex===
 @mixin set-display-flex() {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-//Set display: flex
+//===Set display: grid===
 @mixin set-display-grid() {
     display: grid;
     justify-content: center;

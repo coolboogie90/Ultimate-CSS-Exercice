@@ -12,6 +12,7 @@
 .btn-primary {
     @extend %btn;
     background-color: $btn--light-carmine-pink;
+    color: $primary--pure-white;
 
     &:hover {
         background-color: darken($btn--light-carmine-pink,10%);
@@ -22,6 +23,7 @@
 .btn-secondary {
     @extend %btn;
     background-color: $primary--pure-white;
+    color: $pure-black;
     
     &:hover {
         background-color: darken($primary--pure-white,10%);
