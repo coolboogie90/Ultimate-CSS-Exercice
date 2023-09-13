@@ -31,13 +31,29 @@ input, textarea {
   outline: none;
 }
 
-.container {
-  max-width: 1110px;
-  margin: 0;
-  padding: 0;
+.info {
+  border: 2px solid red;
 }
 
-h1 {
+.logo {
+  font-family: "Barlow", sans-serif;
+  color: #FFFFFF;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.logo span {
+  color: #E6606C;
+}
+
+.header--nav-a {
+  font-family: "Barlow", sans-serif;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.primary-title {
   font-family: "Barlow", sans-serif;
   color: #FFFFFF;
   font-size: 64px;
@@ -48,7 +64,7 @@ h1 {
   text-transform: uppercase;
 }
 
-h2 {
+.secondary-title {
   font-family: "Barlow Condensed", sans-serif;
   color: #FFFFFF;
   font-size: 56px;
@@ -59,7 +75,7 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
+.subtitle {
   font-family: "Barlow", sans-serif;
   color: #E8AB36;
   font-size: 32px;
@@ -69,7 +85,7 @@ h3 {
   text-align: left;
 }
 
-h4 {
+.kicker {
   font-family: "Barlow", sans-serif;
   color: hsla(0, 0%, 100%, 0.5);
   font-size: 16px;
@@ -80,11 +96,44 @@ h4 {
   text-transform: uppercase;
 }
 
+.excerpt {
+  font-family: "Barlow", sans-serif;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.paragraph {
+  font-family: "Barlow", sans-serif;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.card-text {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.footer--nav-a {
+  font-family: "Barlow", sans-serif;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
 .btn-secondary, .btn-primary {
   display: inline-block;
   text-align: center;
   border-radius: 75px;
   padding: 8px 20px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .btn-secondary:hover, .btn-primary:hover {
   transform: scale 0.98;
@@ -92,6 +141,7 @@ h4 {
 
 .btn-primary {
   background-color: #E6606C;
+  color: #FFFFFF;
 }
 .btn-primary:hover {
   background-color: #df3443;
@@ -99,9 +149,8 @@ h4 {
 
 .btn-secondary {
   background-color: #FFFFFF;
+  color: #000;
 }
 .btn-secondary:hover {
   background-color: #e6e6e6;
 }
-
-/*-------RESET-------*/
