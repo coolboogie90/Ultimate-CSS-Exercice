@@ -1,0 +1,20 @@
+.container {
+    max-width: 1110px;
+    margin: 0;
+    padding: 0;
+}
+
+//use @include to call the mixin
+//Set display: flex
+@mixin set-display-flex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Set display: flex
+@mixin set-display-grid() {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}

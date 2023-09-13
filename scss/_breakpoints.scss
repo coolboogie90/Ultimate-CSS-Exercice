@@ -1,0 +1,38 @@
+//VARIABLES
+$ipad: 768px;
+$laptop13: 1280px;
+$laptop: 1440px;
+$desktop: 1920px;
+$desktop4K: 3440px;
+
+//MEDIA QUERIES MIXINS
+@mixin media-query($ipad) {
+    @media screen and (min-width: $ipad) {
+        @content;
+    }
+}
+
+@mixin media-query($laptop13) {
+    @media screen and (min-width: $laptop13) {
+        @content;
+    }
+}
+
+@mixin media-query($laptop) {
+    @media screen and (min-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin media-query($desktop) {
+    @media screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin media-query($desktop4K) {
+    @media screen and (min-width: $desktop4K) {
+        @content;
+    }
+}
+

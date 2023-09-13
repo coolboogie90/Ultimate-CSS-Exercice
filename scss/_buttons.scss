@@ -1,0 +1,29 @@
+%btn {
+    display: inline-block;
+    text-align: center;
+    border-radius: 75px;
+    padding: 8px 20px; 
+
+    &:hover {
+        transform: scale (.98);
+    }
+}
+
+.btn-primary {
+    @extend %btn;
+    background-color: $btn--light-carmine-pink;
+
+    &:hover {
+        background-color: darken($btn--light-carmine-pink,10%);
+    }
+    
+}
+
+.btn-secondary {
+    @extend %btn;
+    background-color: $primary--pure-white;
+    
+    &:hover {
+        background-color: darken($primary--pure-white,10%);
+    }
+}

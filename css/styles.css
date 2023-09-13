@@ -1,1 +1,107 @@
-*{margin:0;padding:0;box-sizing:border-box}/*# sourceMappingURL=styles.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Barlow", sans-serif;
+  color: #FFFFFF;
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 77px;
+  letter-spacing: 0.045em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #FFFFFF;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 64px;
+  letter-spacing: 0px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Barlow", sans-serif;
+  color: #E8AB36;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0.045em;
+  text-align: left;
+}
+
+h4 {
+  font-family: "Barlow", sans-serif;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 3px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.btn-secondary, .btn-primary {
+  display: inline-block;
+  text-align: center;
+  border-radius: 75px;
+  padding: 8px 20px;
+}
+.btn-secondary:hover, .btn-primary:hover {
+  transform: scale 0.98;
+}
+
+.btn-primary {
+  background-color: #E6606C;
+}
+.btn-primary:hover {
+  background-color: #df3443;
+}
+
+.btn-secondary {
+  background-color: #FFFFFF;
+}
+.btn-secondary:hover {
+  background-color: #e6e6e6;
+}
+
+/*-------RESET-------*/

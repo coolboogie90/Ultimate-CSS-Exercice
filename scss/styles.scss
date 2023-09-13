@@ -1,15 +1,17 @@
-/*--SCSS Variables--*/
+//---imports
+@import 'reset';
+@import 'breakpoints';
+@import 'utilities';
+@import 'colors';
+@import 'typography';
+@import 'buttons';
 
-/*--Modules--*/
+//--SCSS Variables--*/
 
-/*--Mixins--*/
+//--Modules--*/
 
-/*--Extends/Inheritance--*/
+//--Mixins--*/
 
-//-------RESET-------//
+//--Extends/Inheritance--*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/*-------RESET-------*/
