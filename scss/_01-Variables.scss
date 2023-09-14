@@ -9,8 +9,8 @@ $primary--pure-white: #FFFFFF;
 $secondary--white-alpha: hsla(0, 0%, 100%, 0.50);
 $pure-black: #000;
 $light-carmine-pink: #E6606C;
-$background--gradient: linear-gradient(to right, #201F22, #2C2D65);
-$card--gradient: linear-gradient(180deg, #4D4F95 0%, #2B2D66 100%);
+$background--gradient: linear-gradient(235deg, #2C2D65 .35%, #201F22 100%);
+$card--gradient: radial-gradient(circle, #4D4F95 0%, #2B2D66 100%);
 $btn--social: #6357F6;
 $subtitle--tulip-tree: #E8AB36;
 
