@@ -40,6 +40,7 @@ body {
         transform: scale (1.1);
     }
 }
+
 //----Debug Class 
 .info {
     @include debugmode();
@@ -88,7 +89,7 @@ body {
         .nav {
             display: flex;
         }
-        
+
         .burger-menu {
             display: none;
         }
@@ -106,13 +107,8 @@ body {
 
     .hero-title {
         @include margin(0, 0, 20px, 0);
+        @include font($primary-font, 54px, 300, 77px, 00.045em, $primary--pure-white);
         position: relative;
-        font-family: $primary-font;
-        color: $primary--pure-white;
-        font-size: 54px;
-        font-weight: 300;
-        line-height: 77px;
-        letter-spacing: 0.045em;
         text-align: left;
         text-transform: uppercase;
     }
@@ -127,12 +123,6 @@ body {
     .hero-subtitle {
         @include margin(0, 0, 20px, 0);
         @include font($primary-font, 26px, 400, 38px, 0.045em, $subtitle--tulip-tree);
-        font-family: $primary-font;
-        color: $subtitle--tulip-tree;
-        font-size: 26px;
-        font-weight: 400;
-        line-height: 38px;
-        letter-spacing: 0.045em;
         text-align: left;
         text-transform: uppercase;
     }
@@ -169,7 +159,6 @@ body {
             font-size: 32px;
         }
     }
-
 }
 
 //SECTION COVER
@@ -196,19 +185,19 @@ body {
         text-transform: uppercase;
     }
 
-    .cover-title::after{
-        content:url(../img/Ellipse\ 1.svg);
+    .cover-title::after {
+        content: url(../img/Ellipse\ 1.svg);
         position: absolute;
         bottom: -35px;
         right: 40px;
     }
 
-    .cover-excerpt{
+    .cover-excerpt {
         @include margin(0, 0, 30px, 0);
         @include font($primary-font, 20px, 400, 32px, normal, $primary--pure-white);
     }
 
-    .cover-description{
+    .cover-description {
         @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
     }
 
@@ -221,5 +210,89 @@ body {
     }
 }
 
-//SECTION CARDS
+//SECTION ARTICLES
+.section-articles {
+    .container {
+        @include set-display-grid;
+        align-items: normal;
+        grid-template-columns: 1fr;
+    }
 
+    .articles-kicker {
+        @include margin(0, 0, 15px, 0);
+        @include font($primary-font, 16px, 400, 32px, 3px, $secondary--white-alpha);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .articles-title {
+        @include margin(0, 0, 30px, 0);
+        @include font($secondary-font, 56px, 300, 64px, 0, $primary--pure-white);
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .articles-title::before {
+        content: url(../img/deco3\ 2.png);
+        position: absolute;
+        top: -60px;
+        left: 250px;
+    }
+
+    .articles-description {
+        @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
+        @include margin(0, 0, 30px, 0);
+        text-align: center;
+    }
+
+    .section-articles-cards {
+        margin: 30px;
+        @include set-display-flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        background-color: $card--gradient;
+        border-radius: 12px;
+        border: 2px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0px 24px 48px 0px rgba(0, 1, 44, 0.16);
+
+        img {
+            overflow: hidden;
+        }
+    }
+
+    .card-title{
+        @include font($secondary-font, 24px, 300, 32px, normal, $primary--pure-white);
+        margin: 32px;
+        width: 75%;
+    }
+
+    .date-publication{
+        margin: 32px;
+        color: $secondary--white-alpha;
+        @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
+    }
+
+    @include resolution($ipad) {
+        .container {
+            grid-template-rows: 1fr 2fr;
+        }
+
+        .section-articles-text {
+            grid-column: span 4;
+        }
+
+        .section-articles-cards {
+            flex-direction: row;
+        }
+
+        .articles-description {
+            @include margin(0, 265px, 0, 265px);
+        }
+
+
+    }
+}

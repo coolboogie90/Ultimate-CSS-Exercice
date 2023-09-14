@@ -33,7 +33,7 @@ $debug: true !default;
     align-items: center;
 }
 
-//===Padding mixin===
+//===Padding mixin - WIP===
 @mixin padding($top, $right, $bottom, $left) {
     padding-top: $top;
     padding-right: $right;
@@ -41,7 +41,7 @@ $debug: true !default;
     padding-left: $left;
 }
 
-//===Margin mixin===
+//===Margin mixin - WIP===
 @mixin margin($top, $right, $bottom, $left) {
     margin-top: $top;
     margin-right: $right;
