@@ -8,11 +8,12 @@
 //===Debug Mode===
 $debug: true !default;
 
-@mixin debugmode{
+@mixin debugmode {
     @if ($debug) {
         @debug "Debug mode enabled";
         border: 2px solid red;
     }
+
     @else {
         border: none;
     }
@@ -30,4 +31,30 @@ $debug: true !default;
     display: grid;
     justify-content: center;
     align-items: center;
+}
+
+//===Padding mixin===
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+//===Margin mixin===
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+//===Font Settings===
+@mixin font($family, $size, $weight, $line, $spacing, $color) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line;
+    letter-spacing: $spacing;
+    color: $color;
 }
