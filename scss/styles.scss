@@ -234,7 +234,7 @@ body {
         text-align: center;
         text-transform: uppercase;
     }
-    
+
     .articles-title::before {
         content: url(../img/deco3\ 2.png);
         position: absolute;
@@ -266,13 +266,13 @@ body {
         }
     }
 
-    .card-title{
+    .card-title {
         @include font($secondary-font, 24px, 300, 32px, normal, $primary--pure-white);
         margin: 32px;
         width: 75%;
     }
 
-    .date-publication{
+    .date-publication {
         margin: 32px;
         color: $secondary--white-alpha;
         @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
@@ -294,7 +294,113 @@ body {
         .articles-description {
             @include margin(0, 265px, 0, 265px);
         }
+    }
+}
+
+.footer {
+    @include padding(0, 50px, 30px, 50px);
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-family: $primary-font;
+        color: $primary--pure-white;
+        font-size: 32px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer-title {
+        @include margin(0, 0, 15px, 0);
+        @include font($primary-font, 16px, 400, 32px, 3px, $secondary--white-alpha);
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    p {
+        @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
+
+    }
+
+    a {
+        @include font($primary-font, 16px, 400, 32px, normal, $primary--pure-white);
+        display: block;
+
+        a:hover {
+            padding-left: 8px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        flex-direction: row;
+        
+            @each $sm in $social-links {
+                .icon-#{$sm} {
+                    background-image: url("../img/#{$sm}.png");
+                }
+            }
+                a {
+            display: inline-block;
+            height: 48px;
+            width: 48px;
+            background-color: $social-links;
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+
+            a:hover {
+                color: #24262b;
+                background-color: darken($social-links, 10%);
+            }
+        }
+    }
 
 
+    .line {
+        background-color: $primary--pure-white;
+        height: 1px;
+        opacity: 0.0797;
+        margin-bottom: 40px;
+    }
+
+    .footer-policy {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 75px;
+        flex-wrap: wrap;
+
+        ul {
+            display: flex;
+            gap: 48px;
+        }
+    }
+
+    @include resolution($ipad) {
+        .footer-col {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+    }
+
+    @include resolution($laptop13) {
+        .footer-col {
+            width: 25%;
+            padding: 110px 15px;
+        }
     }
 }
