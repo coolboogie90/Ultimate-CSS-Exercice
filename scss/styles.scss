@@ -24,8 +24,8 @@ body {
     color: $primary--pure-white;
 
     &:hover {
-        background-color: darken($light-carmine-pink, 10%);
-        transform: scale (1.1);
+        background-color: darken($light-carmine-pink, 8%);
+        transform: scale(1.1);
     }
 }
 
@@ -37,7 +37,7 @@ body {
 
     &:hover {
         background-color: darken($primary--pure-white, 10%);
-        transform: scale (1.1);
+        transform: scale(1.1);
     }
 }
 
@@ -67,7 +67,6 @@ body {
         @include set-display-flex;
     }
 
-
     .nav {
         @include set-display-flex;
         gap: 40px;
@@ -79,6 +78,26 @@ body {
             color: $primary--pure-white;
             font-size: 14px;
             font-weight: 400;
+            position: relative;
+        }
+
+        a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px;
+            background-color: $light-carmine-pink;
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+
+        a:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
         }
     }
 
@@ -149,7 +168,7 @@ body {
     @include resolution($ipad) {
         .container {
             grid-template-columns: 1fr 1fr;
-            margin-bottom: 175px;
+            margin-bottom: 120px;
         }
 
         .hero-title {
@@ -192,6 +211,15 @@ body {
         position: absolute;
         bottom: -35px;
         right: 40px;
+
+        @include resolution($ipad){
+            bottom: 20px;
+        }
+
+        @include resolution($laptop13){
+            bottom: -30px;
+            right: 60px;
+        }
     }
 
     .cover-excerpt {
@@ -239,7 +267,14 @@ body {
         content: url(../img/deco3\ 2.png);
         position: absolute;
         top: -60px;
-        left: 250px;
+        left: -50px;
+
+        @include resolution($ipad){
+            left: 90px;
+        }
+        @include resolution($laptop13){
+            left: 250px;
+        }
     }
 
     .articles-description {
@@ -253,16 +288,23 @@ body {
         @include set-display-flex;
         flex-direction: column;
         gap: 30px;
-    }
 
-    .card {
-        background: $card--gradient;
-        border-radius: 12px;
-        border: 2px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0px 24px 24px 0px rgba(0, 1, 44, 0.16);
+        .card {
+            background: $card--gradient;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0px 24px 24px 0px rgba(0, 1, 44, 0.16);
 
-        img {
-            overflow: hidden;
+            &:hover {
+                background-color: darken($light-carmine-pink, 8%);
+                box-shadow: 0px 24px 24px 0px hsla(239, 41%, 41%, 0.16);
+                transform: scale(1.02);
+                border: 2px solid hsla(0, 0%, 100%, 0.22);
+            }
+
+            img {
+                overflow: hidden;
+            }
         }
     }
 
@@ -279,6 +321,17 @@ body {
     }
 
     @include resolution($ipad) {
+        .articles-description {
+            @include margin(0, 130px, 0, 130px);
+        }
+
+        .section-articles-cards {
+            margin-top: 40px;;
+            flex-direction: row;
+        }
+    }
+
+    @include resolution($ipadPro) {
         .container {
             grid-template-rows: 1fr 2fr;
         }
@@ -287,9 +340,6 @@ body {
             grid-column: span 4;
         }
 
-        .section-articles-cards {
-            flex-direction: row;
-        }
 
         .articles-description {
             @include margin(0, 265px, 0, 265px);
@@ -297,8 +347,18 @@ body {
     }
 }
 
+
 .footer {
-    @include padding(0, 50px, 30px, 50px);
+    @include padding(30px, 30px, 30px, 30px);
+
+    .footer-col {
+
+        .logo,
+        .footer-title,
+        ul {
+            text-align: center;
+        }
+    }
 
     .content {
         display: flex;
@@ -315,18 +375,22 @@ body {
 
     .footer-col {
         width: 100%;
+
+        ul.service:last-child {
+            margin-bottom: 40px;
+        }
     }
 
     .footer-title {
-        @include margin(0, 0, 15px, 0);
+        @include margin(20px, 0, 15px, 0);
         @include font($primary-font, 16px, 400, 32px, 3px, $secondary--white-alpha);
-        text-align: left;
         text-transform: uppercase;
     }
 
     p {
         @include font($primary-font, 16px, 400, 32px, normal, $secondary--white-alpha);
-
+        text-align: center;
+        margin-bottom: 20px;
     }
 
     a {
@@ -339,37 +403,40 @@ body {
     }
 
     .social-links {
+        @include margin(0, 100px, 0, 100px);
         display: flex;
         gap: 8px;
-        justify-content: space-between;
-        align-items: flex-start;
+        justify-content: space-evenly;
+        align-items: flex-end;
 
         flex-direction: row;
-        
-            @each $sm in $social-links {
-                .icon-#{$sm} {
-                    background-image: url("../img/#{$sm}.png");
-                }
-            }
-                a {
+
+        a {
+            padding: 12px;
+
             display: inline-block;
             height: 48px;
             width: 48px;
-            background-color: $social-links;
-            margin: 0 10px 10px 0;
-            text-align: center;
+            background-color: $btn--social;
+            align-items: center;
             line-height: 40px;
             border-radius: 50%;
             color: #ffffff;
             transition: all 0.5s ease;
 
             a:hover {
-                color: #24262b;
-                background-color: darken($social-links, 10%);
+                transform: scale(1.1);
+            }
+
+            img {
+                margin-left: 3px;
+                margin-top: 3px;
+                width: 22px;
+                height: 22px;
+                object-fit: contain;
             }
         }
     }
-
 
     .line {
         background-color: $primary--pure-white;
@@ -380,27 +447,83 @@ body {
 
     .footer-policy {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 75px;
-        flex-wrap: wrap;
-
-        ul {
-            display: flex;
-            gap: 48px;
-        }
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     @include resolution($ipad) {
+        .container{
+            padding-top: 0px;
+        }
+
+        .content{
+            padding-left: 0px;
+        }
+
+        p{
+            margin-bottom: 0px;
+
+        }
+
         .footer-col {
-            width: 50%;
-            margin-bottom: 30px;
+
+            .logo,
+            .footer-title,
+            ul {
+                text-align: left;
+            }
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0px 15px;
+
+            ul.service:last-child {
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-title {
+            @include margin(0px, 0, 15px, 0);
+        }
+
+        .footer-policy {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 75px;
+            flex-wrap: wrap;
+
+            ul {
+                display: flex;
+                gap: 48px;
+            }
         }
     }
 
     @include resolution($laptop13) {
-        .footer-col {
-            width: 25%;
-            padding: 110px 15px;
+        .container {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .footer-col:last-child{
+            padding-left: 60px;
+        }
+
+        .content {
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        .footer-title {
+            @include margin(0px, 0, 15px, 0);
+        }
+
+        .social-links {
+            justify-content: center;
+            padding-right: 0;
         }
     }
 }
